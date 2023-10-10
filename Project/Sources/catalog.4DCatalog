@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="HDI_Data_Change_Tracking" uuid="2D4F6103DC084198BFC0283C03D0A0B2" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="INFO" uuid="107A367EBCC346259FD971E8FC1097DA" id="1">
+		<field name="ID" uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="Description" uuid="C9EFE648E9234AADA33FB25D61C0190B" type="10" never_null="true" id="2">
+			<field_extra position="4"/>
+		</field>
+		<field name="TabTitle" uuid="58AF214936C941439CB263026A5B46ED" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="PageNumber" uuid="A2D86BBFD5134D06999CBDD14FD07A27" type="4" never_null="true" id="4">
+			<field_extra position="2"/>
+		</field>
+		<primary_key field_name="ID" field_uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="2" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="1231" top="295" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="product" uuid="9519DA7B56054FE8BBD885EF7932DB56" id="2" prevent_journaling="true">
+		<field name="ID" uuid="BAB51F5AB53A4B2292A7D9CB048740C9" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="name" uuid="7550292E474E4032AA75BF472CEB04DA" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="price" uuid="2A91DEB691EF46EDB02A246FE296DAFF" type="3" never_null="true" id="3">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="description" uuid="FA71C494FCAE46C896171AE4CEE33346" type="10" limiting_length="255" never_null="true" id="4">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="picture" uuid="FDDDABF736DA42FEA64D3F613A265936" type="10" limiting_length="255" never_null="true" id="5"/>
+		<field name="__GlobalStamp" uuid="0DFFA38AAD084931BF469D9A8B5F5FDD" type="5" never_null="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="BAB51F5AB53A4B2292A7D9CB048740C9"/>
+		<table_extra output_form="productList">
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="29" top="4" width="268" height="230.53203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="(__DeletedRecords)" uuid="D253111F96334E3BBEE863B06FED66FF" id="3" hide_in_REST="true">
+		<field name="ID" uuid="29425C6550EC41E7B090433FAF8992AC" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="__PrimaryKey" uuid="225A0C80AD384FE2B3C34B8B92A90189" type="10" never_null="true" id="2"/>
+		<field name="__Stamp" uuid="DD188612A6ED45B382F578DB60CD64C5" type="5" never_null="true" id="3"/>
+		<field name="__TableName" uuid="B71F106282484A4B820AF62E3424C39E" type="10" never_null="true" id="4"/>
+		<field name="__TableNumber" uuid="2302F78FB771498B9267C87831F9E1D7" type="4" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="29425C6550EC41E7B090433FAF8992AC"/>
+		<table_extra trashed="true">
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="325" top="4" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="__DeletedRecords" uuid="56A5489469D546DC89024835ECED28C4" id="4">
+		<field name="ID" uuid="EC6AE8EEDD024B5D82E1B3ECC2F55984" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="__PrimaryKey" uuid="7854BB90AE5B4E36A4DF8745BA18EC02" type="10" never_null="true" id="2"/>
+		<field name="__Stamp" uuid="942E561C795C413F94334CF46DC34C52" type="5" never_null="true" id="3"/>
+		<field name="__TableName" uuid="540F3AA1CB3144CAA3BE4A5247886CF0" type="10" never_null="true" id="4"/>
+		<field name="__TableNumber" uuid="396E653793B54DA6887D7D85A1A5CBA6" type="4" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="EC6AE8EEDD024B5D82E1B3ECC2F55984"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="640" top="40" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" unique_keys="true" uuid="0509757D20B844E6903D1C276635AB63" type="7">
+		<field_ref uuid="29425C6550EC41E7B090433FAF8992AC" name="ID">
+			<table_ref uuid="D253111F96334E3BBEE863B06FED66FF" name="(__DeletedRecords)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="3A0899C27ED445C5AFADB267F257F0D7" type="7">
+		<field_ref uuid="942E561C795C413F94334CF46DC34C52" name="__Stamp">
+			<table_ref uuid="56A5489469D546DC89024835ECED28C4" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="78490E33C96E47DDACDF6DEB42E181D5" type="7">
+		<field_ref uuid="0DFFA38AAD084931BF469D9A8B5F5FDD" name="__GlobalStamp">
+			<table_ref uuid="9519DA7B56054FE8BBD885EF7932DB56" name="product"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="7F4B6854A70244CDBE9661792F74FC63" type="7">
+		<field_ref uuid="DD188612A6ED45B382F578DB60CD64C5" name="__Stamp">
+			<table_ref uuid="D253111F96334E3BBEE863B06FED66FF" name="(__DeletedRecords)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="881D570A74D34E1CAB083AA52A01D3F6" type="7">
+		<field_ref uuid="BAB51F5AB53A4B2292A7D9CB048740C9" name="ID">
+			<table_ref uuid="9519DA7B56054FE8BBD885EF7932DB56" name="product"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B17E3BF54450493DB72FBD48A5745784" type="7">
+		<field_ref uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" name="ID">
+			<table_ref uuid="107A367EBCC346259FD971E8FC1097DA" name="INFO"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="F7E8B3AD95584D3E8594536DB8881F3C" type="7">
+		<field_ref uuid="EC6AE8EEDD024B5D82E1B3ECC2F55984" name="ID">
+			<table_ref uuid="56A5489469D546DC89024835ECED28C4" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<base_extra package_name="HDI_Template_v18" structure_file_name="HowDoI" data_file_path=":HowDoI.4DD">
+		<journal_file journal_file_enabled="false"/>
+	</base_extra>
+</base>
